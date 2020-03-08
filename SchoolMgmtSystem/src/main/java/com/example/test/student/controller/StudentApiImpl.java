@@ -22,7 +22,7 @@ public class StudentApiImpl implements StudentApi {
 	@Override
 	public ResponseEntity<List<Student>> getAllStudents() {
 		List<Student> allStudents = studentService.getAllStudents();
-		if(allStudents==null && allStudents.isEmpty()) {
+		if(allStudents.isEmpty()) {
 			new RuntimeException("No Record Found");
 		}
 		return new ResponseEntity<List<Student>>(allStudents, HttpStatus.OK);
